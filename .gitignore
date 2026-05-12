@@ -14,8 +14,11 @@ wheels/
 .env.local
 *.duckdb
 *.duckdb.wal
-data/raw/
-data/staging/
+*.duckdb.tmp/
+# Ignore everything in data/ except documentation
+data/*
+!data/.gitkeep
+!data/README.md
 .dbt/
 logs/
 

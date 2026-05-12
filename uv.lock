@@ -149,6 +149,7 @@ source = { editable = "." }
 dependencies = [
     { name = "dbt-core" },
     { name = "dbt-duckdb" },
+    { name = "duckdb" },
     { name = "httpx" },
     { name = "python-dotenv" },
 ]
@@ -157,6 +158,7 @@ dependencies = [
 requires-dist = [
     { name = "dbt-core", specifier = ">=1.11.9" },
     { name = "dbt-duckdb", specifier = ">=1.10.1" },
+    { name = "duckdb", specifier = ">=1.5.2" },
     { name = "httpx", specifier = ">=0.27.0" },
     { name = "python-dotenv", specifier = ">=1.0.0" },
 ]

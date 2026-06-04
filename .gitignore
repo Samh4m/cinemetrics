@@ -15,12 +15,21 @@ wheels/
 *.duckdb
 *.duckdb.wal
 *.duckdb.tmp/
+
 # Ignore everything in data/ except documentation
 data/*
 !data/.gitkeep
 !data/README.md
-.dbt/
+
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+dbt/.user.yml
+
+# Logs
 logs/
+.dbt/
 
 # macOS
 .DS_Store

@@ -1,0 +1,7 @@
+cinemetrics:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: data/cinemetrics.duckdb
+      threads: 4

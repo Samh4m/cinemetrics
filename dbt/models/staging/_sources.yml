@@ -1,0 +1,25 @@
+ version: 2
+
+sources:
+  - name: raw
+    description: "Raw TMDB data loaded from JSON files by the Python loader."
+    schema: main
+    tables:
+      - name: raw_movies_discover
+        description: "Movies returned by TMDB's /discover/movie endpoint, partitioned by release year. Loaded by cinemetrics.loading.duckdb_loader."
+        columns:
+          - name: id
+            description: "TMDB's internal movie ID. Unique per movie."
+          - name: title
+            description: "Display title of the movie."
+          - name: release_date
+            description: "Primary release date as recorded by TMDB."
+          - name: vote_average
+            description: "Average user rating, 0.0 to 10.0."
+          - name: vote_count
+            description: "Number of user votes contributing to vote_average."
+          - name: popularity
+            description: "TMDB's internal popularity score. Recency-weighted, not absolute."
+
+      - name: raw_movies_popular
+        description: "Daily snapshots of TMDB's /movie/popular endpoint. Each row tagged with source filename for snapshot dating."

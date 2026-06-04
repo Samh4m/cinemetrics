@@ -1,0 +1,28 @@
+name: 'cinemetrics'
+version: '1.0.0'
+
+# This profile name maps to a profile in profiles.yml.
+profile: 'cinemetrics'
+
+# Where dbt looks for various file types.
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+# Where dbt writes the compiled SQL and run artifacts.
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Default materialization for each subfolder of models/.
+# Staging models are usually views (cheap to recompute).
+# Marts are usually tables (faster to query repeatedly).
+models:
+  cinemetrics:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

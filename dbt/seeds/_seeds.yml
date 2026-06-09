@@ -1,0 +1,20 @@
+version: 2
+
+seeds:
+  - name: tmdb_genres
+    description: "Movie genre name lookup. Source: TMDB /genre/movie/list endpoint."
+    config:
+      column_types:
+        genre_id: bigint
+        genre_name: varchar
+    columns:
+      - name: genre_id
+        description: "TMDB's internal genre ID. Unique."
+        tests:
+          - not_null
+          - unique
+      - name: genre_name
+        description: "Display name of the genre."
+        tests:
+          - not_null
+          - unique
